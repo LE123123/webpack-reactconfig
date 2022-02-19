@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add -D @babel/core @babel/preset-env @babel/preset-react babel-loader clean-webpack-plugin css-loader html-loader html-wepback-plugin mini-css-extract-plugin node-sass react react-dom sass-loader style-loader webpack webpack-cli webpack-dev-server
+
+PATH: 
+  /Users/ihyeonseo/.jenv/shims:/Users/ihyeonseo/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/ihyeonseo/opt/anaconda3/bin:/Users/ihyeonseo/opt/anaconda3/condabin:/Users/ihyeonseo/.jenv/shims:/Users/ihyeonseo/.jenv/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/ihyeonseo/Library/Android/sdk/emulator:/Users/ihyeonseo/Library/Android/sdk/tools:/Users/ihyeonseo/Library/Android/sdk/tools/bin:/Users/ihyeonseo/Library/Android/sdk/platform-tools:/Users/ihyeonseo/Library/Android/sdk/emulator:/Users/ihyeonseo/Library/Android/sdk/tools:/Users/ihyeonseo/Library/Android/sdk/tools/bin:/Users/ihyeonseo/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  16.6.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/html-wepback-plugin: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66992:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140763:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141735:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141657:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1331:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "webpack-react",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
