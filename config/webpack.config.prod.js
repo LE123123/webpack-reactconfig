@@ -2,20 +2,31 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    app: "./src/index.js",
+  },
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
+    filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, "..", "build"),
   },
   mode: "production",
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "build"),
+  optimization: {
+    runtimeChunk: {
+      name: "runtime",
     },
-    port: 9000,
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: "initial",
+          name: "vendor",
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -56,6 +67,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "style-test.css",
+    }),
+    new WebpackManifestPlugin({
+      fileName: "assets.json",
     }),
     new CleanWebpackPlugin(),
   ],

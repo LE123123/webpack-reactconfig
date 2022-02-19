@@ -7,16 +7,17 @@ const webpack = require("webpack");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
+    filename: "[name].js",
+    path: path.resolve(__dirname, "..", "build"),
   },
-  mode: "dvelopment",
+  mode: "development",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "build"),
+      directory: path.resolve(__dirname, "..", "build"),
     },
     port: 9000,
   },
+  devtool: "eval",
   module: {
     rules: [
       {
